@@ -1,16 +1,45 @@
 {% include "recipes/partials/head.html" %}
-<body>
-    
-    <header class="main-header-container">
-        <div class="main-header container">
-          <h1>
-            <a class="main-logo" href="/">
-                <i class="fa-solid fa-wand-magic-sparkles main-logo-icon"></i>
-                <span class="main-logo-text">Recipes.</span>
-            </a>
-          </h1>
 
+<body>
+    {% include "recipes/partials/header.html" %}
+    {% include "recipes/partials/search.html" %}
+    <main class="main-content-container">
+        <div class="main-content main-content-list container">
+          <div class="recipe recipe-list-item">
+            <div class="recipe-cover">
+                <img src="https://www.dinsmoreinc.com/wp-content/uploads/2019/12/placeholder-1280-720.jpg" alt="dadada">
+            </div>
+            <div class="tittle-container">
+                <h2 class="recipe-title">Lorem ipsum dolor sit amet.</h2>
+            </div>
+
+            <div class="recipe-author">
+                <span class="recipe-author-item">
+                    <i class="fa-solid fa-user"> </i>
+                   Joao Vitor
+                </span>
+
+                <span class="recipe-author-item">
+                    <i class="fa-solid fa-calendar"> </i>
+                     01/10/2007
+                </span>
+
+                <span class="recipe-author-item">
+                    <i class="fa-solid fa-layer-group"> </i>
+                     Breakfest
+                </span>
+            </div>
+           
+          </div>
         </div>
-    </header>
+
+
+    </main>
+   
+   
+
+    </div>
+ 
 </body>
-</html>     
+
+</html>
