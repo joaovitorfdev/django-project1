@@ -1,3 +1,5 @@
+
+
 {% load static %}
 <!DOCTYPE html>
 <html lang="pt_BR">
@@ -12,5 +14,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/fontawesome.min.css" integrity="sha512-v8QQ0YQ3H4K6Ic3PJkym91KoeNT5S3PnDKvqnwqFD1oiqIl653crGZplPdU5KKtHjO0QKcQ2aUlQZYjHczkmGw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{% static 'recipes/css/styles.css' %}">
-    <title>Recipes</title>
+    <title>{% block title%}{% endblock title%}</title>
 </head>
+
+<body>
+    {% include "recipes/partials/header.html" %}
+    {% include "recipes/partials/search.html" %}
+    <main class="main-content-container">
+       {% block content %}{% endblock content %}
+    </main>
+    </div>
+  <footer class="main-footer">
+      <a href="https://github.com/joaovitorfdev"><i class="fa-brands fa-github"></i>  joaovitorfdev</a>
+      <a href="https://www.djangoproject.com/"><i class="fa-solid fa-code"></i>  Made with Django</a>
+  </footer>
+</body>
+
+</html>

@@ -172,6 +172,7 @@ h6 {
 
 }
 
+
 .recipe-list-item {
     max-width: 64rem;
 
@@ -253,6 +254,14 @@ h6 {
     transform: scale(1.02);
 }
 
+.main-content-detail  .recipe-list-item {
+  max-width: 104rem;
+  margin: 0 auto;
+}
+.main-content-detail .recipe-list-item:hover {
+  transform: scale(1);
+  box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2);
+}
 .main-footer {
     background-color: var(--color-gray-9);
     padding: 50px;

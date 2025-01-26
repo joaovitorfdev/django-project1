@@ -1,20 +1,12 @@
-{% include "recipes/partials/head.html" %}
+{% extends 'recipes/partials/base.html' %}
 
-<body>
-    {% include "recipes/partials/header.html" %}
-    {% include "recipes/partials/search.html" %}
-    <main class="main-content-container">
-        <div class="main-content main-content-list container">
-            {% include "recipes/partials/recipe.html" %}
-            {% include "recipes/partials/recipe.html" %}
-            {% include "recipes/partials/recipe.html" %}
-        </div>
-    </main>
-    </div>
-  <footer class="main-footer">
-    <a href="https://github.com/joaovitorfdev"><i class="fa-brands fa-github"></i>  joaovitorfdev</a>
-    <a href="https://www.djangoproject.com/"><i class="fa-solid fa-code"></i>  Made with Django</a>
-  </footer>
-</body>
+{% block title %}Home{% endblock title %}
+{% block content %}
 
-</html>
+<div class="main-content main-content-list container">
+  {% for recipe in recipes %}
+  {% include "recipes/partials/recipe.html" %}
+  {% endfor %}
+</div>
+
+{% endblock content %}
