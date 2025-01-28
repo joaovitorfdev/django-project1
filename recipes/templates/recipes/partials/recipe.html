@@ -1,15 +1,15 @@
 <div class="recipe recipe-list-item">
     <div class="recipe-cover">
-        <img src="https://www.dinsmoreinc.com/wp-content/uploads/2019/12/placeholder-1280-720.jpg"
-            alt="dadada">
+        <img src="{{recipe.cover.url}}"
+            alt="texto imagem relativo">
     </div>
     <div class="recipe-tittle-container">
-        <h2 class="recipe-title">Lorem ipsum dolor sit amet.</h2>
+        <h2 class="recipe-title">{{recipe.title}}</h2>
     </div>
     <div class="recipe-author">
         <span class="recipe-author-item">
             <a href="/user"> <i class="fa-solid fa-user"> </i>
-                João Vitor</a>
+                {{recipe.author.first_name}}</a>
         </span>
         </span>
 
@@ -24,26 +24,34 @@
         </span>
     </div>
     <div class="recipe-content">
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, mollitia exercitationem
-            expedita quaerat odio doloribus omnis molestiae. Placeat, voluptate blanditiis.</p>
+        <p>{{recipe.description}}</p>
     </div>
+    {% if detail_page %}
+    <div class="preparation-steps">
+       {{recipe.preparation_steps|linebreaksbr}} 
+    </div>
+    {% endif %}
     <div class="recipe-meta-container">
         <div class="recipe-meta recipe-preparation">
             <h3> <i class="fa-solid fa-clock"> </i> Preparing time</h3>
 
             <div class="recipe-meta-text">
-                0 minutes
+                {{recipe.preparation_time}} minutes
             </div>
         </div>
         <div class="recipe-meta recipe-portions">
             <h3><i class="fa-solid fa-user-group"></i> Portions</h3>
 
             <div class="recipe-meta-text">
-                10 portions
+                {{recipe.servings}} portions
             </div>
         </div>
     </div>
+    {% if not detail_page %}
     <footer class="recipe-footer">
-        <a href="/" class="recipe-footer-btn"><i class="fa-solid fa-eye"></i> See more</a>
+        <a href="{% url 'recipes:recipe' recipe.id %}" class="recipe-footer-btn"><i class="fa-solid fa-eye"></i> See more</a>
     </footer>
+    {% endif %}
+
+ 
 </div>
